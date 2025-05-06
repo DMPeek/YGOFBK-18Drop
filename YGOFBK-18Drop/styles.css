@@ -1,0 +1,30 @@
+body {
+    color: white;
+    z-index: 1;
+}
+
+.background {
+    background-image: url(./assets/Paladin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    width:100%;
+    top: 0%;
+    left: 0%;
+    filter: brightness(50%);
+    position: absolute;
+    z-index: -1;
+}
+
+.content {
+    width: 80%;
+    background-color: black;
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+    align-items: center;
+}
+
+.resultsBox {
+    text-align: left;
+}
