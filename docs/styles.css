@@ -46,4 +46,16 @@ body {
     #results {
         font-size: 0.9rem;
     }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .content {
+        margin: 0;
+    }
 }
