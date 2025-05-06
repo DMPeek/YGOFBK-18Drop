@@ -28,3 +28,22 @@ body {
 .resultsBox {
     text-align: left;
 }
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .resultsBox {
+        padding: 5px;
+    }
+
+    #results {
+        font-size: 0.9rem;
+    }
+}
