@@ -210,6 +210,9 @@ function rollEighteen() {
         currentIndex--;
         [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
     };
+    while (rolledMons != 0) {
+        rolledMons.pop();
+    };
 
     let eighteen = allMons.slice(0,18);
     eighteen.sort((a, b) => a.id - b.id);
@@ -220,7 +223,6 @@ function rollEighteen() {
 };
 
 function reset() {
-    console.log(allMons.length)
     document.getElementById("results").innerHTML = "";
     while (rolledMons != 0) {
         rolledMons.pop();
