@@ -44,7 +44,7 @@ const allMons = [
     {id: 48, Name: "Water Girl"},
     {id: 49, Name: "Dragon Piper"},
     {id: 50, Name: "Gemini Elf (Kachua)"},
-    {id: 51, Name: "Gemini Elf (Lora"},
+    {id: 51, Name: "Gemini Elf (Lora)"},
     {id: 52, Name: "Elemental Hero Neos"},
     {id: 53, Name: "Giltia the D. Knight"},
     {id: 54, Name: "Black Luster Soldier"},
