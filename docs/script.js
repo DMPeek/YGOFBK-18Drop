@@ -163,19 +163,44 @@ const allMons = [
     {id: 173, Name: "Rocket Warrior"}
 ]
 
+const rolledMons = [];
+
 function rollOne() {
-    let currentIndex = allMons.length;
-    while (currentIndex > 0) {
-        let randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
-    };
+    if (rolledMons.length !== 162){
+        if (rolledMons.length === 0 ){
+            let currentIndex = allMons.length;
+            while (currentIndex > 0) {
+                let randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]];
+            };
 
-    const one = allMons.slice(0,1);
-    let displayResults = one.map(monster => `${monster.id} - ${monster.Name}`)
+            let one = allMons.slice(0,1);
+            let displayResults = one.map(monster => `${monster.id} - ${monster.Name}`);
 
-    console.log(one);
-    document.getElementById("results").innerHTML = displayResults
+            console.log(one);
+            rolledMons.push(one[0]);
+            document.getElementById("results").innerHTML = displayResults;
+        } else {
+            const filteredMons = allMons.filter(monster1 => !rolledMons.some(monster2 => monster1.id === monster2.id))
+
+            let filteredIndex = filteredMons.length;
+            while (filteredIndex > 0) {
+                let randomIndex = Math.floor(Math.random() * filteredIndex);
+                filteredIndex--;
+                [filteredMons[filteredIndex], filteredMons[randomIndex]] = [filteredMons[randomIndex], filteredMons[filteredIndex]];
+            }
+
+            let one = filteredMons.slice(0,1);
+            let displayResults = one.map(monster => `${monster.id} - ${monster.Name}`);
+
+            console.log(one);
+            rolledMons.push(one[0]);
+            document.getElementById("results").innerHTML += `<br>${displayResults}`
+        };
+    } else {
+        document.getElementById("results").innerHTML += "<br>Bro you rolled everyone, just stop.";
+    }
 };
 
 function rollEighteen() {
@@ -186,11 +211,20 @@ function rollEighteen() {
         [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
     };
 
-    const eighteen = allMons.slice(0,18);
+    let eighteen = allMons.slice(0,18);
     eighteen.sort((a, b) => a.id - b.id);
     let displayResults = eighteen.map(monster => `${monster.id} - ${monster.Name}`).join("<br>")
 
     console.log(eighteen);
     document.getElementById("results").innerHTML = displayResults
 };
+
+function reset() {
+    console.log(allMons.length)
+    document.getElementById("results").innerHTML = "";
+    while (rolledMons != 0) {
+        rolledMons.pop();
+    };
+};
+
 
