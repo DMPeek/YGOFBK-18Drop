@@ -3,6 +3,12 @@ body {
     z-index: 1;
 }
 
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .background {
     background-image: url(./assets/Paladin.jpg);
     background-size: cover;
