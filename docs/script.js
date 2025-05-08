@@ -203,6 +203,25 @@ function rollOne() {
     }
 };
 
+function rollThree() {
+    let currentIndex = allMons.length;
+    while (currentIndex > 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
+    };
+    while (rolledMons != 0) {
+        rolledMons.pop();
+    };
+
+    let three = allMons.slice(0,3);
+    three.sort((a, b) => a.id - b.id);
+    let displayResults = three.map(monster => `${monster.id} - ${monster.Name}`).join("<br>")
+
+    console.log(three);
+    document.getElementById("results").innerHTML = displayResults
+};
+
 function rollEighteen() {
     let currentIndex = allMons.length;
     while (currentIndex > 0) {
