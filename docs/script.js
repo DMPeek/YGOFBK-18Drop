@@ -222,15 +222,17 @@ function rollThree() {
     document.getElementById("results").innerHTML = displayResults
 };
 
+// roll 3 and roll 18 could be the same function, how would I go about this?
+
 function rollEighteen() {
     let currentIndex = allMons.length;
     while (currentIndex > 0) {
         let randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
         [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
-    };
-    while (rolledMons != 0) {
-        rolledMons.pop();
+    }; //think about random number potentially being what switches them out? maybe don't need to reiterate. Potentially.
+    if (rolledMons.length > 0) {
+        rolledMons = []; // a different way to clear array, faster processing
     };
 
     let eighteen = allMons.slice(0,18);
