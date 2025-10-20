@@ -231,8 +231,8 @@ function rollEighteen() {
         currentIndex--;
         [allMons[currentIndex], allMons[randomIndex]] = [allMons[randomIndex], allMons[currentIndex]]
     }; //think about random number potentially being what switches them out? maybe don't need to reiterate. Potentially.
-    if (rolledMons.length > 0) {
-        rolledMons = []; // a different way to clear array, faster processing
+    while (rolledMons != 0) {
+        rolledMons.pop();
     };
 
     let eighteen = allMons.slice(0,18);
